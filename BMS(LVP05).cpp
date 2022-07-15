@@ -1,11 +1,7 @@
 /*>Discente: Andreza Vilar de Farias
->Matrícula: 120210357
->Período: 2021.1
->Curso: Engenharia Elétrica
->Disciplina: Técnicas de Programação
->Turma: 02
->Professor: Marcus Salerno
->Unidade 2 : lvp 5*/
+>Curso: Engenharia ElÃ©trica
+>Disciplina: TÃ©cnicas de ProgramaÃ§Ã£o
+>Turma: 02 */
 
 #include <iostream>
 #include <iomanip>
@@ -21,8 +17,8 @@ class BMS{
 		float tensaoBateria, temperaturaBateria, correnteBateria, correnteSobrecargaBateria, nivelCargaBateria;
 
 	public:
-		BMS(); //declaração do construtor
-		~BMS(); //declaração do destrutor
+		BMS(); //declaraÃ§Ã£o do construtor
+		~BMS(); //declaraÃ§Ã£o do destrutor
 		void setTensao(float);
 		void setCorrenteBat(float);
 		void setTempBat(float);
@@ -41,7 +37,7 @@ class BMS{
 };
 
 
-//depois do prototipo da classe, cada função vai ser implementada
+//depois do prototipo da classe, cada funÃ§Ã£o vai ser implementada
 BMS::BMS(){  //construtor default inicializando os atributos
     tensaoBateria = 0;
     temperaturaBateria = 0;
@@ -96,7 +92,7 @@ float BMS::calculaPotencia(){
     return (correnteBateria*tensaoBateria);
 }
 
-//esses 3 métodos retornam a situação da bateria quanto a carga, temperatura e corrente
+//esses 3 mÃ©todos retornam a situaÃ§Ã£o da bateria quanto a carga, temperatura e corrente
 string BMS::situacaoCarga(){
     if (nivelCargaBateria < estadoBateriaIdeal)
         return "Estado de carga anormal (estado de alerta)";
@@ -118,19 +114,19 @@ string BMS::situacaoCorrente(){
         return "Corrente normal";
 }
 
-//destrutor pra assim que finalizar o código liberar memória
+//destrutor pra assim que finalizar o cÃ³digo liberar memÃ³ria
 BMS::~BMS(){
     cout<<"TESTES REALIZADOS COM SUCESSO!";
 }
 
-//implementação das funções com as atribuições
+//implementaÃ§Ã£o das funÃ§Ãµes com as atribuiÃ§Ãµes
 int main (){
     setlocale(LC_ALL,"Portuguese");
 
-    BMS bateria1; //instanciação do objeto a classe
+    BMS bateria1; //instanciaÃ§Ã£o do objeto a classe
     float tensao_inst,temperatura,corrente,corrente_sobrecarga, nivel_carga;
 
-    cout<<"Informe o valor da tensão instantânea: ";
+    cout<<"Informe o valor da tensÃ£o instantÃ¢nea: ";
     cin >>tensao_inst;
     cout<<"Informe o valor da corrente: ";
     cin >>corrente;
@@ -138,7 +134,7 @@ int main (){
     cin >>temperatura;
     cout<<"Informe o valor da corrente de sobrecarga: ";
     cin >>corrente_sobrecarga;
-    cout<<"Informe o nível de carga da bateria (em porcentagem): ";
+    cout<<"Informe o nÃ­vel de carga da bateria (em porcentagem): ";
     cin >>nivel_carga;
 
     bateria1.setCorrenteBat(corrente);
@@ -148,10 +144,10 @@ int main (){
     bateria1.setTensao(tensao_inst);
 
 
-    cout<<"Tensão Bateria ---->   "<<bateria1.getTensao()<<"V"<<endl;
+    cout<<"TensÃ£o Bateria ---->   "<<bateria1.getTensao()<<"V"<<endl;
     cout<<"Corrente Bateria ---->   "<<bateria1.getCorrenteBat()<<"A   "<<bateria1.situacaoCorrente()<<endl;
     cout<<"Potencia ---->   "<<bateria1.calculaPotencia()<<"W "<<endl;
-    cout<<"Sensor de Temperatura ---->   "<<bateria1.getTempBat()<<"ºC   "<<bateria1.situacaoTemperatura()<<endl;
+    cout<<"Sensor de Temperatura ---->   "<<bateria1.getTempBat()<<"ÂºC   "<<bateria1.situacaoTemperatura()<<endl;
     cout<<"Estado da Carga ---->   "<<bateria1.getNivelCarga()<<"%   "<<bateria1.situacaoCarga()<<endl;
 
 
