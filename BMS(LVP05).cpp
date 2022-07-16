@@ -1,5 +1,4 @@
 /*>Discente: Andreza Vilar de Farias
->Curso: Engenharia Elétrica
 >Disciplina: Técnicas de Programação
 >Turma: 02 */
 
